@@ -1,0 +1,245 @@
+* {
+    margin: 0, auto;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background-color: #aac8e3;
+}
+
+body.dark {
+    background: #2a2a2c;
+}
+
+.clock {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #aac8e3;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: -4px -4px 8px #ffffff73,
+        4px 4px 6px rgba(131, 131, 131, 0.703);
+}
+
+body.dark .clock {
+    background: #2a2a2c;
+    box-shadow: -4px -4px 8px #00000073,
+        4px 4px 6px rgba(146, 146, 146, 0.465);
+}
+
+.clock:before {
+    position: absolute;
+    content: '';
+    height: 250px;
+    width: 250px;
+    background: #aac8e3;
+    border-radius: 50%;
+    box-shadow: inset -4px -4px 8px #ffffff73,
+                inset 4px 4px 6px rgba(94, 104, 121, 0.472);
+}
+
+body.dark .clock:before{
+    background: #2a2a2c;
+    box-shadow: inset -2px -2px 8px #00000073,
+                inset 2px 2px 6px rgba(146, 146, 146, 0.465);
+}
+
+.clock:after {
+    position: absolute;
+    content: '';
+    height: 100px;
+    width: 100px;
+    background: #aac8e3;
+    border-radius: 50%;
+    box-shadow: -2px -2px 7px #00000073,
+                2px 2px 5px rgba(94, 104, 121, 0.472);
+}
+
+body.dark .clock:after{
+    background: #2a2a2c;
+    box-shadow: -2px -2px 8px #00000073,
+                2px 2px 6px rgba(146, 146, 146, 0.465);
+}
+
+.clock .center-nut {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background: #0e0e0e;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.clock .center-nut2 {
+    position: absolute;
+    height: 9px;
+    width: 9px;
+    background: #73bfec;
+    border-radius: 50%;
+    z-index: 15;
+}
+
+.indicators div {
+    position: absolute;
+    width: 3px;
+    height: 10px;
+    background: #0e0e0e;
+}
+
+.indicators div:nth-child(1) {
+    transform: rotate(30deg) translateY(-110px);
+}
+
+.indicators div:nth-child(2) {
+    transform: rotate(60deg) translateY(-110px);
+}
+
+.indicators div:nth-child(3) {
+    background: #fb5e5e;
+    transform: rotate(90deg) translateY(-110px);
+}
+
+.indicators div:nth-child(4) {
+    transform: rotate(120deg) translateY(-110px);
+}
+
+.indicators div:nth-child(5) {
+    transform: rotate(150deg) translateY(-110px);
+}
+
+.indicators div:nth-child(6) {
+    background: #fb5e5e;
+    transform: rotate(180deg) translateY(-110px);
+}
+
+.indicators div:nth-child(7) {
+    transform: rotate(210deg) translateY(-110px);
+}
+
+.indicators div:nth-child(8) {
+    transform: rotate(240deg) translateY(-110px);
+}
+
+.indicators div:nth-child(9) {
+    background: #fb5e5e;
+    transform: rotate(270deg) translateY(-110px);
+}
+
+.indicators div:nth-child(10) {
+    transform: rotate(300deg) translateY(-110px);
+}
+
+.indicators div:nth-child(11) {
+    transform: rotate(330deg) translateY(-110px);
+}
+
+.indicators div:nth-child(12) {
+    background: #fb5e5e;
+    transform: rotate(360deg) translateY(-110px);
+}
+
+.min-hand,
+.sec-hand,
+.hr-hand {
+    position: absolute;
+}
+
+.sec-hand,
+.sec {
+    height: 180px;
+    width: 180px;
+    z-index: 6;
+}
+
+.min-hand,
+.min {
+    height: 160px;
+    width: 160px;
+    z-index: 5;
+}
+
+.hr-hand,
+.hr {
+    height: 110px;
+    width: 110px;
+    z-index: 6;
+}
+
+.sec,
+.min,
+.hr {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.sec:before {
+    position: absolute;
+    content: '';
+    height: 110px;
+    width: 3px;
+    background: #6663ff;
+}
+
+.min:before {
+    position: absolute;
+    content: '';
+    height: 110px;
+    width: 3px;
+    background: #f5e8ff;
+}
+
+.hr:before {
+    position: absolute;
+    content: '';
+    height: 75px;
+    width: 4px;
+    background: #fb5e5e;
+}
+
+
+.toggleTheme {
+    position: absolute;
+    top: 40px;
+    right: 150px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    border-radius: 50%;
+    background: #000000;
+    font-family: consolas;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.toggleTheme:before {
+    position: absolute;
+    left: 25px;
+    content: 'Dark Mode';
+    color: #000000;
+    white-space: nowrap;
+}
+
+body.dark .toggleTheme {
+    background: #ffffff;
+    color:#ffffff;
+}
+
+body.dark .toggleTheme:before {
+    position: absolute;
+    left: 25px;
+    content: 'Light Mode';
+    color: #ffffff;
+    white-space: nowrap;
+}
